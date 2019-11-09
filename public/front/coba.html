@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+    body{
+   width:100%;
+   height:100%;
+   background: #eee;
+}
+div.menu{
+  
+   margin: 5% 10%;
+   background: transparent;
+}
+
+a, #showall{
+   display:inline-block;
+   margin:0 1%;
+   padding:2%;
+   border-radius: 10%;
+   -webkit-box-shadow: 0px 3px 11px 2px rgba(0,0,0,0.2);
+   -moz-box-shadow: 0px 3px 11px 2px rgba(0,0,0,0.2);
+   box-shadow: 0px 3px 11px 2px rgba(0,0,0,0.2);
+}
+a:nth-child(1){
+  background:#E63946; 
+   color: #eee;
+}
+a:nth-child(2){
+    background:#F1FAEE; 
+   color: #222;
+}
+a:nth-child(3){
+   background: #A8DADC; 
+    color: #222;
+  
+}
+a:nth-child(4){
+   background: #457B9D;
+   color: #eee;
+}
+a:nth-child(5){
+   background: #1D3557;  
+   color: #eee;
+}
+
+
+.cnt{
+   margin: 5% 10%;
+   background: transparent;
+}
+  </style>
+</head>
+<body>
+
+  <div class="menu">
+<a  id="showall">All</a>
+<a  class="showSingle" target="1">Div 1</a>
+<a  class="showSingle" target="2">Div 2</a>
+<a  class="showSingle" target="3">Div 3</a>
+<a  class="showSingle" target="4">Div 4</a>
+</div>
+
+<section class="cnt">
+<div id="" class="targetDiv">Content   1</div>
+<div id="" class="targetDiv">Content   2</div>
+<div id="" class="targetDiv">Content   3</div>
+<div id="" class="targetDiv">Content   4</div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+  jQuery(function(){
+         jQuery('#showall').click(function(){
+               jQuery('.targetDiv').show();
+        });
+        jQuery('.showSingle').click(function(){
+              jQuery('.targetDiv').hide();
+              jQuery('#div'+$(this).attr('target')).show();
+        });
+});
+</script>
+
+</body>
+</html>
